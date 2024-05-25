@@ -72,6 +72,7 @@ group :test do
 end
 
 # Custom gems
+gem 'binance-connector-ruby'
 gem 'cssbundling-rails'
 gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'rails_admin', '~> 3.0'

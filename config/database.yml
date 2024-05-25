@@ -14,7 +14,7 @@ development:
 
 test:
   <<: *default
-  database: juegos_test
+  database: trading_test
 
 production:
   <<: *default
