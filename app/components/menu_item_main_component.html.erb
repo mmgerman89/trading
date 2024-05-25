@@ -1,0 +1,14 @@
+<li>
+  <a href="<%= @url %>" class="<%= 'has-arrow' if @has_items %>">
+    <div class="parent-icon"><i class="bi <%= @icon %>"></i>
+    </div>
+    <div class="menu-title"><%= content %></div>
+  </a>
+  <% if @has_items %>
+    <ul>
+      <% @items.each do |item| %>
+        <%= render(MenuItemArrowComponent.new(url: item[:url] ).with_content(item[:name])) %>
+      <% end %>
+    </ul>
+  <% end %>
+</li>

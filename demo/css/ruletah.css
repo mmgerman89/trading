@@ -1,0 +1,83 @@
+#square {
+    width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;  
+  }
+  
+  #box {
+    width:300px;
+    height:200px;
+    margin:5em auto 0 auto;
+    background:#FFF;
+    overflow:hidden;
+    border:8px solid #888;   
+    background:linear-gradient(to bottom, #FFF 50%, #EEE 50%);  
+  }
+  
+  #roulette {
+    width:400px;
+    height:200px;
+    display:inline-flex;
+  }
+  
+  #roulette div {
+    min-width:200px;
+    height:200px;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;  
+    border-right:2px solid #888;
+    padding:40px 10px;
+  }
+  
+  #roulette div i {
+    font-size:72px;
+  }
+  
+  #roulette div span {
+    font-family:Montserrat;
+    letter-spacing:-1px;
+    font-size:32px;
+  }
+  
+  #arrow {
+    width:0;
+    height:0;
+    border-left:25px solid transparent;
+    border-right:25px solid transparent;
+    border-bottom:100px solid steelblue;
+    position:relative;
+    top:-85px;
+  }
+  
+  button {
+    width:150px;
+    height:50px;
+    font-size:22px;
+    background:red;
+    border:0;
+    color:#FFF;
+  }
+  
+  button:hover {
+    background:green;
+    cursor:pointer;
+  }
+  
+  .shine {
+    animation: brillo .5s ease;
+  }
+  
+  #txt {
+    margin-top:1em;
+    font-family:Montserrat;
+    color:#FFF;
+  }
+  
+  @keyframes brillo {
+    0% { border-bottom-color:steelblue; }
+    25%, 75% { border-bottom-color:green; }
+    100% { border-bottom-color:steelblue; }
+  }

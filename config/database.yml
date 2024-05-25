@@ -1,0 +1,20 @@
+default: &default
+  adapter: <%= ENV['DB_ADAPTER'] ||= 'postgresql' %>
+  encoding: unicode
+  host:     <%= ENV['DATABASE_HOST'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  database: <%= ENV['POSTGRES_DB'] %>
+  pool:     <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  variables:
+    statement_timeout: 5000
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: juegos_test
+
+production:
+  <<: *default

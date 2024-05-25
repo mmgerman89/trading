@@ -1,0 +1,65 @@
+<!--start content-->
+<main class="authentication-content">
+  <div class="container-fluid">
+    <div class="authentication-card">
+      <div class="card shadow rounded-0 overflow-hidden">
+        <div class="row g-0">
+          <div class="col-lg-6 bg-login d-flex align-items-center justify-content-center">
+            <%= image_tag 'template/error/login-img.jpg', class: "img-fluid", alt: '' %>
+          </div>
+          <div class="col-lg-6">
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title">Registrarse</h5>
+              <p class="card-text mb-5">Juegos TV</p>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+                           class: "form-body", data: { turbo: "false" }) do |f| %>
+                <div class="login-separater text-center mb-4"> <span>REGISTRARSE CON E-MAIL</span>
+                  <hr>
+                </div>
+                <div class="row g-3">
+                  <div class="col-12 ">
+                    <label for="inputName" class="form-label">Nombre</label>
+                    <div class="ms-auto position-relative">
+                      <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-person-circle"></i></div>
+                      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control radius-30 ps-5", placeholder: "Nombre" %>
+                    </div>
+                  </div>
+                  <div class="col-12 ">
+                    <label for="inputName" class="form-label">Apellido</label>
+                    <div class="ms-auto position-relative">
+                      <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-person-circle"></i></div>
+                      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control radius-30 ps-5", placeholder: "Apellido" %>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="inputEmailAddress" class="form-label">E-mail</label>
+                    <div class="ms-auto position-relative">
+                      <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-envelope-fill"></i></div>
+                      <%= f.email_field :email, autofocus: false, autocomplete: "email", class: "form-control radius-30 ps-5", placeholder: "E-mail" %>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="inputChoosePassword" class="form-label">Contraseña</label>
+                    <div class="ms-auto position-relative">
+                      <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-lock-fill"></i></div>
+                      <%= f.password_field :password, autocomplete: "new-password", class: "form-control radius-30 ps-5", placeholder: "Contaseña" %>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-grid">
+                      <%= f.submit "Registrarse", class: "btn btn-primary radius-30" %>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <p class="mb-0">¿Ya tenés una cuenta? <a href="<%= new_user_session_path %>">Iniciar sesión aquí</a></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!--end page main-->

@@ -1,0 +1,12 @@
+- name: Principal
+  url: javascript:;
+  icon: bi-house-door
+  items:
+    - name: Inicio
+      url: google.com
+    - name: Mi cuenta
+      url: twitter.com
+- name: Rails Admin
+  url: /admin
+  icon: bi-collection-play
+  

@@ -1,0 +1,13 @@
+<tr>
+  <td><%= person.name %></td>
+  <td><%= person.person_type_t %></td>
+  <td><%= person.document_type_t %></td>
+  <td><%= person.full_document %></td>
+  <td>
+    <div class="table-actions d-flex align-items-center gap-3 fs-6">
+      <%= render(GridActionViewComponent.new(url: person_path(person))) %>
+      <%= render(GridActionEditComponent.new(url: edit_person_path(person))) %>
+      <%= render(GridActionDeleteComponent.new(url: person_path(person))) %>
+    </div>
+  </td>
+</tr>

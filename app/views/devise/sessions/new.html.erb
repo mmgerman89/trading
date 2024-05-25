@@ -1,0 +1,58 @@
+<main class="authentication-content">
+  <div class="container-fluid">
+    <div class="authentication-card">
+      <div class="card shadow rounded-0 overflow-hidden">
+        <div class="row g-0">
+          <div class="col-lg-6 bg-login d-flex align-items-center justify-content-center">
+            <%= image_tag 'template/error/login-img.jpg', class: "img-fluid", alt: '' %>
+          </div>
+          <div class="col-lg-6">
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title">Iniciar sesión</h5>
+              <p class="card-text mb-5">Juegos TV</p>
+
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name), 
+                           class: "form-body", data: { turbo: "false" }) do |f| %>
+                <div class="login-separater text-center mb-4"> <span>INICIAR SESIÓN CON E-MAIL</span>
+                  <hr>
+                </div>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="inputEmailAddress" class="form-label">E-mail</label>
+                    <div class="ms-auto position-relative">
+                      <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-envelope-fill"></i></div>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control radius-30 ps-5", placeholder: "E-mail" %>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="inputChoosePassword" class="form-label">Contraseña</label>
+                    <div class="ms-auto position-relative">
+                      <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-lock-fill"></i></div>
+                      <%= f.password_field :password, autocomplete: "current-password", class: "form-control radius-30 ps-5", placeholder: "Contraseña" %>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-check form-switch">
+                      <%= f.check_box :remember_me, class: "form-check-input", checked: "checked" %>
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Recordarme</label>
+                    </div>
+                  </div>
+                  <div class="col-6 text-end">	<a href="authentication-forgot-password.html">Olvidé mi contraseña</a>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-grid">
+                      <%= f.submit "Iniciar", class: "btn btn-primary radius-30" %>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <p class="mb-0">¿No tenés una cuenta aún? <a href="<%= new_user_registration_path %>">Registrarse aquí</a></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

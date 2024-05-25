@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  person_type: MyString
+  name: MyString
+  document_number: MyString
+  verifying_digit: MyString
+  document_type: MyString
+
+two:
+  person_type: MyString
+  name: MyString
+  document_number: MyString
+  verifying_digit: MyString
+  document_type: MyString

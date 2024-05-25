@@ -1,0 +1,24 @@
+<!--start sidebar -->
+<aside class="sidebar-wrapper" data-simplebar="true">
+  <div class="sidebar-header">
+    <div>
+      <%= image_tag 'template/logo-icon.png', class: "logo-icon", alt: 'logo icon' %>
+    </div>
+    <div>
+      <h4 class="logo-text">Skodash</h4>
+    </div>
+    <div class="toggle-icon ms-auto"><i class="bi bi-chevron-double-left"></i>
+    </div>
+  </div>
+
+  <!--navigation-->
+  <ul class="metismenu" id="menu">
+    <% @menu_options.each do |menu_option| %>
+      <% has_items = menu_option[:items] && menu_option[:items].count > 0 %>
+      <% items = menu_option[:items] ? menu_option[:items] : [] %>
+      <%= render(MenuItemMainComponent.new(url: menu_option[:url], icon: menu_option[:icon], has_items: , items: items).with_content(menu_option[:name])) %>
+    <% end %>
+  </ul>
+  <!--end navigation-->
+</aside>
+<!--end sidebar -->

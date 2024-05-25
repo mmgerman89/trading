@@ -1,0 +1,23 @@
+<h1>Peronas</h1>
+
+<%= link_to "Nueva Persona", new_person_path, class: "btn btn-primary px-5" %>
+
+<div class="table-responsive mt-3">
+  <table class="table align-middle">
+    <thead class="table-secondary">
+      <tr>
+      <th>Nombre</th>
+      <th>Tipo Persona</th>
+      <th>Tipo Documento</th>
+      <th>Documento</th>
+      <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @people.each do |person| %>
+        <%= render person %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
