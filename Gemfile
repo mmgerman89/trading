@@ -13,7 +13,7 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem "puma", "~> 6.4.1"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -74,6 +74,5 @@ end
 # Custom gems
 gem 'cssbundling-rails'
 gem 'devise', '~> 4.9', '>= 4.9.2'
-gem 'jwt'
 gem 'rails_admin', '~> 3.0'
 gem 'view_component'

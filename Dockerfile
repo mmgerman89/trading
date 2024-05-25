@@ -8,9 +8,9 @@ RUN apt-get update \
   && apt-get upgrade -y \
   && apt-get install -qq -y --fix-missing --no-install-recommends \
 	build-essential \
-    libpq-dev \
+  libpq-dev \
 	yarn \
-    postgresql-client
+  postgresql-client
 
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
     apt-get install -y nodejs
@@ -32,7 +32,7 @@ ENV BUNDLE_JOBS 2
 ENV BUNDLE_PATH /gems
 
 RUN gem update --system \
-  && gem install bundler -v 2.5.6 \
+  && gem install bundler -v 2.5.10 \
   && gem install rails -v 7.1.3 \
   && gem install sidekiq \
   && gem install puma \

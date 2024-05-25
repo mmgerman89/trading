@@ -1,5 +1,3 @@
-version: '3'
-
 services:
 
   app:
@@ -19,7 +17,7 @@ services:
       - .env/development/web
       - .env/development/database
     ports:
-      - 4010:3000
+      - 4001:3000
 
   redis:
     image: redis:7.2.4
@@ -48,7 +46,7 @@ services:
 
 volumes:
   db_data:
-  pgadmin-data:
   redis_data:
   storage_data:
   gems_volume:
+  # pgadmin-data:
