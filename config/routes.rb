@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   # Custom
   get 'crypto', to: 'crypto#index'
+  get 'analyze', to: 'crypto#analyze'
   
 
   # Base

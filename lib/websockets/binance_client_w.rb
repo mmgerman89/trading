@@ -40,7 +40,8 @@ class BinanceClientW
 
   def process_message(data)
     price = data['p']
-    ActionCable.server.broadcast('crypto_channel', { price: price })
+    symbol = data['s']
+    ActionCable.server.broadcast('crypto_channel', { price: price, symbol: symbol })
     puts data
   end
 end

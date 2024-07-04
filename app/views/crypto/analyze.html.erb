@@ -1,0 +1,48 @@
+
+<h2>Historico</h2>
+
+<h2><%= @symbol %> Ticker</h2>
+<p id="btc-price">Price: <%= @btc_ticker[:lastPrice] %></p>
+<%= button_to 'Actualizar', process_and_save_klines_path(symbol: @symbol), class: 'btn btn-primary' %>
+
+<% @result_analysis.to_json %>
+
+<h1>Klines</h1>
+<div class="table-responsive mt-3">
+  <table class="table align-middle">
+    <thead class="table-secondary">
+    <tr>
+      <th>Open Time</th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>SMA</th>
+      <th>Volume</th>
+      <th>Close Time</th>
+      <th>Quote Asset Volume</th>
+      <th>Number of Trades</th>
+      <th>Taker Buy Base Asset Volume</th>
+      <th>Taker Buy Quote Asset Volume</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @history.each_with_index do |kline, index| %>
+      <tr>
+        <td><%= kline.open_time.strftime("%d/%m/%Y %H:%M:%S") %></td>
+        <td><%= number_to_currency kline.open %></td>
+        <td><%= number_to_currency kline.high %></td>
+        <td><%= number_to_currency kline.low %></td>
+        <td><%= number_to_currency kline.close %></td>
+        <td><%= number_to_currency @result_analysis[index].sma if @result_analysis[index] %></td>
+        <td><%= kline.volume %></td>
+        <td><%= kline.close_time.strftime("%d/%m/%Y %H:%M:%S") %></td>
+        <td><%= kline.quote_asset_volume %></td>
+        <td><%= kline.number_of_trades %></td>
+        <td><%= kline.taker_buy_base_asset_volume %></td>
+        <td><%= kline.taker_buy_quote_asset_volume %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

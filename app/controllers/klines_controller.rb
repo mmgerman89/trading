@@ -59,7 +59,7 @@ class KlinesController < ApplicationController
 
   # Custom method to process and save Kline data
   def process_and_save
-    symbol = 'BTCUSDT'
+    symbol = params[:symbol]
     kline_data = crypto_service.get_history(symbol)
 
     kline_data.each do |data|
@@ -71,6 +71,9 @@ class KlinesController < ApplicationController
 
       kline = Kline.find_by(symbol: symbol, open_time: open_time, close_time: close_time)
       data_params = {
+        symbol: symbol,
+        open_time: open_time,
+        close_time: close_time,
         open: data[1].to_d,
         high: data[2].to_d,
         low: data[3].to_d,
@@ -85,11 +88,6 @@ class KlinesController < ApplicationController
         puts "Ya existe kline: #{kline}"
         kline.update(data_params)
       else
-        data_params += {
-          symbol: symbol,
-          open_time: open_time,
-          close_time: close_time
-        }
         kline = Kline.create(data_params)
         
         puts "Nuevo kline creado: #{kline}"
