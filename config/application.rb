@@ -6,7 +6,7 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Juegos
+module Trading
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -19,7 +19,9 @@ module Juegos
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-    config.assets.enabled = true
 
+    config.autoload_paths << Rails.root.join('lib')
+
+    config.assets.enabled = true
   end
 end

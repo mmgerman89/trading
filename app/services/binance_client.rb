@@ -18,7 +18,7 @@
       #@client.account
     end
 
-    def historical_prices(symbol, interval = '1d', limit = 500)
+    def historical_prices(symbol, interval = '1d', limit = 600)
       @client.klines(symbol: symbol, interval: interval, limit: limit)
     end
   end
