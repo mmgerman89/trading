@@ -77,7 +77,7 @@ gem 'cssbundling-rails'
 gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'eventmachine'
 gem 'faye-websocket'
+gem 'jsbundling-rails', '~> 1.3'
 gem 'rails_admin', '~> 3.0'
+gem 'technical-analysis'
 gem 'view_component'
-gem "cssbundling-rails"
-gem "jsbundling-rails", "~> 1.3"

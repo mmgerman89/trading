@@ -7,6 +7,10 @@ class CryptoController < ApplicationController
     @btc_ticker = crypto_service.get_ticker('BTCUSDT')
     @account_info = crypto_service.get_account_info
     @history = Kline.all.order(open_time: :desc)
+    
+    
+    input_data = @history.map { |kline| { date_time: kline.open_time, close: kline.close } }
+    @result_analysis = TechnicalAnalysis::Sma.calculate(input_data, period: 30, price_key: :close)
   end
 
   private

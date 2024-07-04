@@ -72,6 +72,17 @@ class KlinesController < ApplicationController
       kline = Kline.find_by(symbol: symbol, open_time: open_time, close_time: close_time)
       if kline
         puts "Ya existe kline: #{kline}"
+        kline.update(
+          open: data[1].to_d,
+          high: data[2].to_d,
+          low: data[3].to_d,
+          close: data[4].to_d,
+          volume: data[5].to_d,
+          quote_asset_volume: data[7].to_d,
+          number_of_trades: data[8],
+          taker_buy_base_asset_volume: data[9].to_d,
+          taker_buy_quote_asset_volume: data[10].to_d
+        )
       else
         kline = Kline.create(
           symbol: symbol,
