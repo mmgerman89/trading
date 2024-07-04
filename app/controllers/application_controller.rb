@@ -24,6 +24,9 @@ class ApplicationController < ActionController::Base
         ] 
       },
       {
+        name: 'Crypto', url: crypto_path, icon: 'bi-house-door'
+      },
+      {
         name: 'Personas', url: people_path, icon: 'bi-house-door'
       },
       {

@@ -1,0 +1,72 @@
+<%= form_with(model: kline) do |form| %>
+  <% if kline.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(kline.errors.count, "error") %> prohibited this kline from being saved:</h2>
+
+      <ul>
+        <% kline.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :open_time, style: "display: block" %>
+    <%= form.datetime_field :open_time %>
+  </div>
+
+  <div>
+    <%= form.label :open, style: "display: block" %>
+    <%= form.text_field :open %>
+  </div>
+
+  <div>
+    <%= form.label :high, style: "display: block" %>
+    <%= form.text_field :high %>
+  </div>
+
+  <div>
+    <%= form.label :low, style: "display: block" %>
+    <%= form.text_field :low %>
+  </div>
+
+  <div>
+    <%= form.label :close, style: "display: block" %>
+    <%= form.text_field :close %>
+  </div>
+
+  <div>
+    <%= form.label :volume, style: "display: block" %>
+    <%= form.text_field :volume %>
+  </div>
+
+  <div>
+    <%= form.label :close_time, style: "display: block" %>
+    <%= form.datetime_field :close_time %>
+  </div>
+
+  <div>
+    <%= form.label :quote_asset_volume, style: "display: block" %>
+    <%= form.text_field :quote_asset_volume %>
+  </div>
+
+  <div>
+    <%= form.label :number_of_trades, style: "display: block" %>
+    <%= form.number_field :number_of_trades %>
+  </div>
+
+  <div>
+    <%= form.label :taker_buy_base_asset_volume, style: "display: block" %>
+    <%= form.text_field :taker_buy_base_asset_volume %>
+  </div>
+
+  <div>
+    <%= form.label :taker_buy_quote_asset_volume, style: "display: block" %>
+    <%= form.text_field :taker_buy_quote_asset_volume %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

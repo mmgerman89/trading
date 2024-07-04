@@ -10,9 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_09_22_140210) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_04_013049) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "klines", force: :cascade do |t|
+    t.string "symbol"
+    t.datetime "open_time"
+    t.decimal "open"
+    t.decimal "high"
+    t.decimal "low"
+    t.decimal "close"
+    t.decimal "volume"
+    t.datetime "close_time"
+    t.decimal "quote_asset_volume"
+    t.integer "number_of_trades"
+    t.decimal "taker_buy_base_asset_volume"
+    t.decimal "taker_buy_quote_asset_volume"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "people", force: :cascade do |t|
     t.string "person_type"

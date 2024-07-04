@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @kline %>
+
+<div>
+  <%= link_to "Edit this kline", edit_kline_path(@kline) %> |
+  <%= link_to "Back to klines", klines_path %>
+
+  <%= button_to "Destroy this kline", @kline, method: :delete %>
+</div>

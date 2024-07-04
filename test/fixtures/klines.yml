@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  open_time: 2024-07-04 01:30:49
+  open: 9.99
+  high: 9.99
+  low: 9.99
+  close: 9.99
+  volume: 9.99
+  close_time: 2024-07-04 01:30:49
+  quote_asset_volume: 9.99
+  number_of_trades: 1
+  taker_buy_base_asset_volume: 9.99
+  taker_buy_quote_asset_volume: 9.99
+
+two:
+  open_time: 2024-07-04 01:30:49
+  open: 9.99
+  high: 9.99
+  low: 9.99
+  close: 9.99
+  volume: 9.99
+  close_time: 2024-07-04 01:30:49
+  quote_asset_volume: 9.99
+  number_of_trades: 1
+  taker_buy_base_asset_volume: 9.99
+  taker_buy_quote_asset_volume: 9.99

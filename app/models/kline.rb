@@ -1,0 +1,2 @@
+class Kline < ApplicationRecord
+end

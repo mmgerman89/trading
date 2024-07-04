@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  resources :klines do
+    collection do
+      post 'process_and_save'
+    end
+  end
   # Custom
   get 'crypto', to: 'crypto#index'
+  
 
   # Base
   resources :people

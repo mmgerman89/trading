@@ -77,3 +77,4 @@ gem 'cssbundling-rails'
 gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'rails_admin', '~> 3.0'
 gem 'view_component'
+gem "cssbundling-rails"

@@ -14,4 +14,8 @@ class CryptoService
   def get_account_info
     @binance_client.account_info
   end
+
+  def get_history(symbol)
+    @binance_client.historical_prices(symbol)
+  end
 end

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Klines</h1>
+
+<div id="klines">
+  <% @klines.each do |kline| %>
+    <%= render kline %>
+    <p>
+      <%= link_to "Show this kline", kline %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New kline", new_kline_path %>
