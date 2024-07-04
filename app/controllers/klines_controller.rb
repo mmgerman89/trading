@@ -101,8 +101,11 @@ class KlinesController < ApplicationController
         puts "Nuevo kline creado: #{kline}"
       end
     end
-
-    render json: { status: 'success' }, status: :ok
+    
+    respond_to do |format|
+      format.html { redirect_to crypto_path, notiche: 'Actuaizado' }
+      format.json { render :index, status: :created }
+    end
   end
 
   private

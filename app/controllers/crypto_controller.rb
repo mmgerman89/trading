@@ -10,7 +10,7 @@ class CryptoController < ApplicationController
     
     
     input_data = @history.map { |kline| { date_time: kline.open_time, close: kline.close } }
-    @result_analysis = TechnicalAnalysis::Sma.calculate(input_data, period: 30, price_key: :close)
+    @result_analysis = TechnicalAnalysis::Sma.calculate(input_data, period: 30, price_key: :close) if input_data.count > 0
   end
 
   private
