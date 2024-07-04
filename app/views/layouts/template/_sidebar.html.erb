@@ -16,7 +16,7 @@
     <% @menu_options.each do |menu_option| %>
       <% has_items = menu_option[:items] && menu_option[:items].count > 0 %>
       <% items = menu_option[:items] ? menu_option[:items] : [] %>
-      <%= render(MenuItemMainComponent.new(url: menu_option[:url], icon: menu_option[:icon], has_items: , items: items).with_content(menu_option[:name])) %>
+      <%= render(MenuItemMainComponent.new(url: menu_option[:url], icon: menu_option[:icon], target: menu_option[:target], has_items: , items: items).with_content(menu_option[:name])) %>
     <% end %>
   </ul>
   <!--end navigation-->

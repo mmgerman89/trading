@@ -1,5 +1,5 @@
 <li>
-  <a href="<%= @url %>" class="<%= 'has-arrow' if @has_items %>">
+  <a href="<%= @url %>" class="<%= 'has-arrow' if @has_items %>" target="<%= '_blank' if @target_blank %>">
     <div class="parent-icon"><i class="bi <%= @icon %>"></i>
     </div>
     <div class="menu-title"><%= content %></div>

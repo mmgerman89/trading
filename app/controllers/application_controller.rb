@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
         name: 'Personas', url: people_path, icon: 'bi-house-door'
       },
       {
-        name: 'Admin', url: rails_admin_path, icon: 'bi-collection-play'
+        name: 'Admin', url: rails_admin_path, icon: 'bi-collection-play', target: '_blank'
       }
     ]
   end
