@@ -5,8 +5,6 @@
 <p id="btc-price">Price: <%= @btc_ticker[:lastPrice] %></p>
 <%= button_to 'Actualizar', process_and_save_klines_path(symbol: @symbol), class: 'btn btn-primary' %>
 
-<% @result_analysis.to_json %>
-
 <h1>Klines</h1>
 <div class="table-responsive mt-3">
   <table class="table align-middle">
@@ -35,7 +33,7 @@
         <td><%= number_to_currency kline.high %></td>
         <td><%= number_to_currency kline.low %></td>
         <td><%= number_to_currency kline.close %></td>
-        <td><%= number_to_currency @result_analysis[index].sma if @result_analysis[index] %></td>
+        <td><%= "#{number_to_currency @result_analysis[index].sma} | #{@result_analysis[index].date_time.strftime("%d/%m/%Y")}" if @result_analysis[index] %></td>
         <td><%= kline.volume %></td>
         <td><%= kline.close_time.strftime("%d/%m/%Y %H:%M:%S") %></td>
         <td><%= kline.quote_asset_volume %></td>
